@@ -345,9 +345,8 @@ function Base.setindex!(a::TracedRArray{T,N}, v, indices::Vararg{Any,N}) where {
     end
 
     indices = [
-        (
-            TracedUtils.promote_to(TracedRNumber{Int}, i isa Colon ? 1 : first(i)) - 1
-        ).mlir_data for i in indices
+        (TracedUtils.promote_to(TracedRNumber{Int}, i isa Colon ? 1 : first(i)) - 1).mlir_data
+        for i in indices
     ]
     res = MLIR.IR.result(
         MLIR.Dialects.stablehlo.dynamic_update_slice(

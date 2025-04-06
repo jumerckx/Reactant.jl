@@ -134,7 +134,7 @@ for (jlop, hloop, hlocomp) in (
         function $(jlop)(
             @nospecialize(lhs::TracedRNumber{T}), @nospecialize(rhs::TracedRNumber{T})
         ) where {T}
-            return Ops.compare(lhs, rhs; comparison_direction=$(hlocomp))
+            return Ops.compare(lhs, rhs; comparison_direction=($(hlocomp)))
         end
 
         function $(jlop)(@nospecialize(lhs::TracedRNumber{T}), @nospecialize(rhs)) where {T}

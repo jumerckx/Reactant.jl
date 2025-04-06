@@ -207,15 +207,21 @@ Base.@nospecializeinfer function traced_type_inner(
     end
 end
 
-Base.@nospecializeinfer @inline base_typet(@nospecialize(TV::UnionAll)) =
-    UnionAll(TV.var, base_typet(TV.body))
-Base.@nospecializeinfer @inline base_typet(@nospecialize(TV::DataType)) =
-    TracedRArray{TV.parameters...}
+Base.@nospecializeinfer @inline base_typet(@nospecialize(TV::UnionAll)) = UnionAll(
+    TV.var, base_typet(TV.body)
+)
+Base.@nospecializeinfer @inline base_typet(@nospecialize(TV::DataType)) = TracedRArray{
+    TV.parameters...
+}
 
-Base.@nospecializeinfer @inline base_typec(@nospecialize(TV::UnionAll)) =
-    UnionAll(TV.var, base_typec(TV.body))
-Base.@nospecializeinfer @inline base_typec(@nospecialize(TV::DataType)) =
-    (TV <: TracedRArray ? ConcreteRArray : ConcreteRNumber){TV.parameters...}
+Base.@nospecializeinfer @inline base_typec(@nospecialize(TV::UnionAll)) = UnionAll(
+    TV.var, base_typec(TV.body)
+)
+Base.@nospecializeinfer @inline base_typec(@nospecialize(TV::DataType)) = (
+    TV<:TracedRArray ? ConcreteRArray : ConcreteRNumber
+){
+    TV.parameters...
+}
 
 Base.@nospecializeinfer function traced_type_inner(
     @nospecialize(T::Type{<:ConcreteRArray}),
