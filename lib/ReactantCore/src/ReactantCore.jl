@@ -143,12 +143,10 @@ function trace_for(mod, expr)
     step = length(range.args) == 3 ? 1 : range.args[3]
     limit = range.args[end]
 
-    body_symbols = ExpressionExplorer.compute_symbols_state(
-        quote
-            $(Expr(:local, assign))
-            $body
-        end,
-    )
+    body_symbols = ExpressionExplorer.compute_symbols_state(quote
+        $(Expr(:local, assign))
+        $body
+    end)
 
     external_syms = body_symbols.assignments ∪ body_symbols.references
     filter!(∉(SPECIAL_SYMBOLS), external_syms)
