@@ -44,7 +44,7 @@ function module_(;
     !isnothing(sym_visibility) &&
         push!(attributes, namedattribute("sym_visibility", sym_visibility))
 
-    return create_operation(
+    create_operation(
         "builtin.module",
         location;
         operands,
@@ -99,7 +99,7 @@ function unrealized_conversion_cast(
     successors = Block[]
     attributes = NamedAttribute[]
 
-    return create_operation(
+    create_operation(
         "builtin.unrealized_conversion_cast",
         location;
         operands,

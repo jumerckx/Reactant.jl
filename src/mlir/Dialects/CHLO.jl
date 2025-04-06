@@ -31,7 +31,7 @@ function acos(operand::Value; result=nothing::Union{Nothing,IR.Type}, location=L
     attributes = NamedAttribute[]
     !isnothing(result) && push!(op_ty_results, result)
 
-    return create_operation(
+    create_operation(
         "chlo.acos",
         location;
         operands,
@@ -61,7 +61,7 @@ function acosh(operand::Value; result=nothing::Union{Nothing,IR.Type}, location=
     attributes = NamedAttribute[]
     !isnothing(result) && push!(op_ty_results, result)
 
-    return create_operation(
+    create_operation(
         "chlo.acosh",
         location;
         operands,
@@ -101,7 +101,7 @@ function _asin_acos_kernel(
     attributes = NamedAttribute[]
     !isnothing(result) && push!(op_ty_results, result)
 
-    return create_operation(
+    create_operation(
         "chlo._asin_acos_kernel",
         location;
         operands,
@@ -130,7 +130,7 @@ function asin(operand::Value; result=nothing::Union{Nothing,IR.Type}, location=L
     attributes = NamedAttribute[]
     !isnothing(result) && push!(op_ty_results, result)
 
-    return create_operation(
+    create_operation(
         "chlo.asin",
         location;
         operands,
@@ -159,7 +159,7 @@ function asinh(operand::Value; result=nothing::Union{Nothing,IR.Type}, location=
     attributes = NamedAttribute[]
     !isnothing(result) && push!(op_ty_results, result)
 
-    return create_operation(
+    create_operation(
         "chlo.asinh",
         location;
         operands,
@@ -188,7 +188,7 @@ function atan(operand::Value; result=nothing::Union{Nothing,IR.Type}, location=L
     attributes = NamedAttribute[]
     !isnothing(result) && push!(op_ty_results, result)
 
-    return create_operation(
+    create_operation(
         "chlo.atan",
         location;
         operands,
@@ -218,7 +218,7 @@ function atanh(operand::Value; result=nothing::Union{Nothing,IR.Type}, location=
     attributes = NamedAttribute[]
     !isnothing(result) && push!(op_ty_results, result)
 
-    return create_operation(
+    create_operation(
         "chlo.atanh",
         location;
         operands,
@@ -245,7 +245,7 @@ function bessel_i1e(
     attributes = NamedAttribute[]
     !isnothing(result) && push!(op_ty_results, result)
 
-    return create_operation(
+    create_operation(
         "chlo.bessel_i1e",
         location;
         operands,
@@ -281,7 +281,7 @@ function broadcast_add(
     !isnothing(broadcast_dimensions) &&
         push!(attributes, namedattribute("broadcast_dimensions", broadcast_dimensions))
 
-    return create_operation(
+    create_operation(
         "chlo.broadcast_add",
         location;
         operands,
@@ -317,7 +317,7 @@ function broadcast_and(
     !isnothing(broadcast_dimensions) &&
         push!(attributes, namedattribute("broadcast_dimensions", broadcast_dimensions))
 
-    return create_operation(
+    create_operation(
         "chlo.broadcast_and",
         location;
         operands,
@@ -353,7 +353,7 @@ function broadcast_atan2(
     !isnothing(broadcast_dimensions) &&
         push!(attributes, namedattribute("broadcast_dimensions", broadcast_dimensions))
 
-    return create_operation(
+    create_operation(
         "chlo.broadcast_atan2",
         location;
         operands,
@@ -398,7 +398,7 @@ function broadcast_compare(
     !isnothing(compare_type) &&
         push!(attributes, namedattribute("compare_type", compare_type))
 
-    return create_operation(
+    create_operation(
         "chlo.broadcast_compare",
         location;
         operands,
@@ -432,7 +432,7 @@ function broadcast_complex(
     !isnothing(broadcast_dimensions) &&
         push!(attributes, namedattribute("broadcast_dimensions", broadcast_dimensions))
 
-    return create_operation(
+    create_operation(
         "chlo.broadcast_complex",
         location;
         operands,
@@ -468,7 +468,7 @@ function broadcast_divide(
     !isnothing(broadcast_dimensions) &&
         push!(attributes, namedattribute("broadcast_dimensions", broadcast_dimensions))
 
-    return create_operation(
+    create_operation(
         "chlo.broadcast_divide",
         location;
         operands,
@@ -504,7 +504,7 @@ function broadcast_maximum(
     !isnothing(broadcast_dimensions) &&
         push!(attributes, namedattribute("broadcast_dimensions", broadcast_dimensions))
 
-    return create_operation(
+    create_operation(
         "chlo.broadcast_maximum",
         location;
         operands,
@@ -540,7 +540,7 @@ function broadcast_minimum(
     !isnothing(broadcast_dimensions) &&
         push!(attributes, namedattribute("broadcast_dimensions", broadcast_dimensions))
 
-    return create_operation(
+    create_operation(
         "chlo.broadcast_minimum",
         location;
         operands,
@@ -576,7 +576,7 @@ function broadcast_multiply(
     !isnothing(broadcast_dimensions) &&
         push!(attributes, namedattribute("broadcast_dimensions", broadcast_dimensions))
 
-    return create_operation(
+    create_operation(
         "chlo.broadcast_multiply",
         location;
         operands,
@@ -612,7 +612,7 @@ function broadcast_next_after(
     !isnothing(broadcast_dimensions) &&
         push!(attributes, namedattribute("broadcast_dimensions", broadcast_dimensions))
 
-    return create_operation(
+    create_operation(
         "chlo.broadcast_next_after",
         location;
         operands,
@@ -648,7 +648,7 @@ function broadcast_or(
     !isnothing(broadcast_dimensions) &&
         push!(attributes, namedattribute("broadcast_dimensions", broadcast_dimensions))
 
-    return create_operation(
+    create_operation(
         "chlo.broadcast_or",
         location;
         operands,
@@ -681,7 +681,7 @@ function broadcast_polygamma(
     !isnothing(broadcast_dimensions) &&
         push!(attributes, namedattribute("broadcast_dimensions", broadcast_dimensions))
 
-    return create_operation(
+    create_operation(
         "chlo.broadcast_polygamma",
         location;
         operands,
@@ -717,7 +717,7 @@ function broadcast_power(
     !isnothing(broadcast_dimensions) &&
         push!(attributes, namedattribute("broadcast_dimensions", broadcast_dimensions))
 
-    return create_operation(
+    create_operation(
         "chlo.broadcast_power",
         location;
         operands,
@@ -753,7 +753,7 @@ function broadcast_remainder(
     !isnothing(broadcast_dimensions) &&
         push!(attributes, namedattribute("broadcast_dimensions", broadcast_dimensions))
 
-    return create_operation(
+    create_operation(
         "chlo.broadcast_remainder",
         location;
         operands,
@@ -787,7 +787,7 @@ function broadcast_select(
     attributes = NamedAttribute[]
     !isnothing(result_0) && push!(op_ty_results, result_0)
 
-    return create_operation(
+    create_operation(
         "chlo.broadcast_select",
         location;
         operands,
@@ -823,7 +823,7 @@ function broadcast_shift_left(
     !isnothing(broadcast_dimensions) &&
         push!(attributes, namedattribute("broadcast_dimensions", broadcast_dimensions))
 
-    return create_operation(
+    create_operation(
         "chlo.broadcast_shift_left",
         location;
         operands,
@@ -859,7 +859,7 @@ function broadcast_shift_right_arithmetic(
     !isnothing(broadcast_dimensions) &&
         push!(attributes, namedattribute("broadcast_dimensions", broadcast_dimensions))
 
-    return create_operation(
+    create_operation(
         "chlo.broadcast_shift_right_arithmetic",
         location;
         operands,
@@ -895,7 +895,7 @@ function broadcast_shift_right_logical(
     !isnothing(broadcast_dimensions) &&
         push!(attributes, namedattribute("broadcast_dimensions", broadcast_dimensions))
 
-    return create_operation(
+    create_operation(
         "chlo.broadcast_shift_right_logical",
         location;
         operands,
@@ -931,7 +931,7 @@ function broadcast_subtract(
     !isnothing(broadcast_dimensions) &&
         push!(attributes, namedattribute("broadcast_dimensions", broadcast_dimensions))
 
-    return create_operation(
+    create_operation(
         "chlo.broadcast_subtract",
         location;
         operands,
@@ -967,7 +967,7 @@ function broadcast_xor(
     !isnothing(broadcast_dimensions) &&
         push!(attributes, namedattribute("broadcast_dimensions", broadcast_dimensions))
 
-    return create_operation(
+    create_operation(
         "chlo.broadcast_xor",
         location;
         operands,
@@ -1004,7 +1004,7 @@ function broadcast_zeta(
     !isnothing(broadcast_dimensions) &&
         push!(attributes, namedattribute("broadcast_dimensions", broadcast_dimensions))
 
-    return create_operation(
+    create_operation(
         "chlo.broadcast_zeta",
         location;
         operands,
@@ -1033,7 +1033,7 @@ function conj(operand::Value; result=nothing::Union{Nothing,IR.Type}, location=L
     attributes = NamedAttribute[]
     !isnothing(result) && push!(op_ty_results, result)
 
-    return create_operation(
+    create_operation(
         "chlo.conj",
         location;
         operands,
@@ -1060,7 +1060,7 @@ function constant_like(
     attributes = NamedAttribute[namedattribute("value", value),]
     !isnothing(result_0) && push!(op_ty_results, result_0)
 
-    return create_operation(
+    create_operation(
         "chlo.constant_like",
         location;
         operands,
@@ -1085,7 +1085,7 @@ function constant(; output=nothing::Union{Nothing,IR.Type}, value, location=Loca
     attributes = NamedAttribute[namedattribute("value", value),]
     !isnothing(output) && push!(op_ty_results, output)
 
-    return create_operation(
+    create_operation(
         "chlo.constant",
         location;
         operands,
@@ -1114,7 +1114,7 @@ function cosh(operand::Value; result=nothing::Union{Nothing,IR.Type}, location=L
     attributes = NamedAttribute[]
     !isnothing(result) && push!(op_ty_results, result)
 
-    return create_operation(
+    create_operation(
         "chlo.cosh",
         location;
         operands,
@@ -1141,7 +1141,7 @@ function digamma(
     attributes = NamedAttribute[]
     !isnothing(result) && push!(op_ty_results, result)
 
-    return create_operation(
+    create_operation(
         "chlo.digamma",
         location;
         operands,
@@ -1168,7 +1168,7 @@ function erf_inv(
     attributes = NamedAttribute[]
     !isnothing(result) && push!(op_ty_results, result)
 
-    return create_operation(
+    create_operation(
         "chlo.erf_inv",
         location;
         operands,
@@ -1196,7 +1196,7 @@ function erf(operand::Value; result=nothing::Union{Nothing,IR.Type}, location=Lo
     attributes = NamedAttribute[]
     !isnothing(result) && push!(op_ty_results, result)
 
-    return create_operation(
+    create_operation(
         "chlo.erf",
         location;
         operands,
@@ -1224,7 +1224,7 @@ function erfc(operand::Value; result=nothing::Union{Nothing,IR.Type}, location=L
     attributes = NamedAttribute[]
     !isnothing(result) && push!(op_ty_results, result)
 
-    return create_operation(
+    create_operation(
         "chlo.erfc",
         location;
         operands,
@@ -1249,7 +1249,7 @@ function is_inf(operand::Value; result=nothing::Union{Nothing,IR.Type}, location
     attributes = NamedAttribute[]
     !isnothing(result) && push!(op_ty_results, result)
 
-    return create_operation(
+    create_operation(
         "chlo.is_inf",
         location;
         operands,
@@ -1276,7 +1276,7 @@ function is_neg_inf(
     attributes = NamedAttribute[]
     !isnothing(result) && push!(op_ty_results, result)
 
-    return create_operation(
+    create_operation(
         "chlo.is_neg_inf",
         location;
         operands,
@@ -1303,7 +1303,7 @@ function is_pos_inf(
     attributes = NamedAttribute[]
     !isnothing(result) && push!(op_ty_results, result)
 
-    return create_operation(
+    create_operation(
         "chlo.is_pos_inf",
         location;
         operands,
@@ -1328,7 +1328,7 @@ function lgamma(operand::Value; result=nothing::Union{Nothing,IR.Type}, location
     attributes = NamedAttribute[]
     !isnothing(result) && push!(op_ty_results, result)
 
-    return create_operation(
+    create_operation(
         "chlo.lgamma",
         location;
         operands,
@@ -1358,7 +1358,7 @@ function next_after(
     attributes = NamedAttribute[]
     !isnothing(result) && push!(op_ty_results, result)
 
-    return create_operation(
+    create_operation(
         "chlo.next_after",
         location;
         operands,
@@ -1385,7 +1385,7 @@ function polygamma(
     attributes = NamedAttribute[]
     !isnothing(result) && push!(op_ty_results, result)
 
-    return create_operation(
+    create_operation(
         "chlo.polygamma",
         location;
         operands,
@@ -1439,7 +1439,7 @@ function ragged_dot(
     !isnothing(precision_config) &&
         push!(attributes, namedattribute("precision_config", precision_config))
 
-    return create_operation(
+    create_operation(
         "chlo.ragged_dot",
         location;
         operands,
@@ -1469,7 +1469,7 @@ function sinh(operand::Value; result=nothing::Union{Nothing,IR.Type}, location=L
     attributes = NamedAttribute[]
     !isnothing(result) && push!(op_ty_results, result)
 
-    return create_operation(
+    create_operation(
         "chlo.sinh",
         location;
         operands,
@@ -1499,7 +1499,7 @@ function square(operand::Value; result=nothing::Union{Nothing,IR.Type}, location
     attributes = NamedAttribute[]
     !isnothing(result) && push!(op_ty_results, result)
 
-    return create_operation(
+    create_operation(
         "chlo.square",
         location;
         operands,
@@ -1528,7 +1528,7 @@ function tan(operand::Value; result=nothing::Union{Nothing,IR.Type}, location=Lo
     attributes = NamedAttribute[]
     !isnothing(result) && push!(op_ty_results, result)
 
-    return create_operation(
+    create_operation(
         "chlo.tan",
         location;
         operands,
@@ -1569,7 +1569,7 @@ function top_k(
     !isnothing(values) && push!(op_ty_results, values)
     !isnothing(indices) && push!(op_ty_results, indices)
 
-    return create_operation(
+    create_operation(
         "chlo.top_k",
         location;
         operands,
@@ -1600,7 +1600,7 @@ function zeta(
     attributes = NamedAttribute[]
     !isnothing(result) && push!(op_ty_results, result)
 
-    return create_operation(
+    create_operation(
         "chlo.zeta",
         location;
         operands,

@@ -44,7 +44,7 @@ function kernel_call(
     !isnothing(output_operand_aliases) &&
         push!(attributes, namedattribute("output_operand_aliases", output_operand_aliases))
 
-    return create_operation(
+    create_operation(
         "enzymexla.kernel_call",
         location;
         operands,
@@ -63,7 +63,7 @@ function memref2pointer(source::Value; result::IR.Type, location=Location())
     successors = Block[]
     attributes = NamedAttribute[]
 
-    return create_operation(
+    create_operation(
         "enzymexla.memref2pointer",
         location;
         operands,
@@ -82,7 +82,7 @@ function pointer2memref(source::Value; result::IR.Type, location=Location())
     successors = Block[]
     attributes = NamedAttribute[]
 
-    return create_operation(
+    create_operation(
         "enzymexla.pointer2memref",
         location;
         operands,

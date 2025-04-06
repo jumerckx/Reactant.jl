@@ -42,7 +42,7 @@ function call_indirect(
     successors = Block[]
     attributes = NamedAttribute[]
 
-    return create_operation(
+    create_operation(
         "func.call_indirect",
         location;
         operands,
@@ -82,7 +82,7 @@ function call(
     attributes = NamedAttribute[namedattribute("callee", callee),]
     !isnothing(no_inline) && push!(attributes, namedattribute("no_inline", no_inline))
 
-    return create_operation(
+    create_operation(
         "func.call",
         location;
         operands,
@@ -122,7 +122,7 @@ function constant(; result_0::IR.Type, value, location=Location())
     successors = Block[]
     attributes = NamedAttribute[namedattribute("value", value),]
 
-    return create_operation(
+    create_operation(
         "func.constant",
         location;
         operands,
@@ -196,7 +196,7 @@ function func_(;
     !isnothing(res_attrs) && push!(attributes, namedattribute("res_attrs", res_attrs))
     !isnothing(no_inline) && push!(attributes, namedattribute("no_inline", no_inline))
 
-    return create_operation(
+    create_operation(
         "func.func",
         location;
         operands,
@@ -232,7 +232,7 @@ function return_(operands::Vector{Value}; location=Location())
     successors = Block[]
     attributes = NamedAttribute[]
 
-    return create_operation(
+    create_operation(
         "func.return",
         location;
         operands,

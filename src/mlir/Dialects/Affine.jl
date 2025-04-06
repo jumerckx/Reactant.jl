@@ -48,7 +48,7 @@ function apply(
     attributes = NamedAttribute[namedattribute("map", map),]
     !isnothing(result_0) && push!(op_ty_results, result_0)
 
-    return create_operation(
+    create_operation(
         "affine.apply",
         location;
         operands,
@@ -123,7 +123,7 @@ function delinearize_index(
     successors = Block[]
     attributes = NamedAttribute[namedattribute("static_basis", static_basis),]
 
-    return create_operation(
+    create_operation(
         "affine.delinearize_index",
         location;
         operands,
@@ -269,7 +269,7 @@ function for_(
         ]),
     )
 
-    return create_operation(
+    create_operation(
         "affine.for",
         location;
         operands,
@@ -365,7 +365,7 @@ function if_(
     successors = Block[]
     attributes = NamedAttribute[namedattribute("condition", condition),]
 
-    return create_operation(
+    create_operation(
         "affine.if",
         location;
         operands,
@@ -441,7 +441,7 @@ function linearize_index(
     push!(attributes, operandsegmentsizes([length(multi_index), length(dynamic_basis)]))
     !isnothing(linear_index) && push!(op_ty_results, linear_index)
 
-    return create_operation(
+    create_operation(
         "affine.linearize_index",
         location;
         operands,
@@ -490,7 +490,7 @@ function load(
     successors = Block[]
     attributes = NamedAttribute[namedattribute("map", map),]
 
-    return create_operation(
+    create_operation(
         "affine.load",
         location;
         operands,
@@ -527,7 +527,7 @@ function max(
     attributes = NamedAttribute[namedattribute("map", map),]
     !isnothing(result_0) && push!(op_ty_results, result_0)
 
-    return create_operation(
+    create_operation(
         "affine.max",
         location;
         operands,
@@ -574,7 +574,7 @@ function min(
     attributes = NamedAttribute[namedattribute("map", map),]
     !isnothing(result_0) && push!(op_ty_results, result_0)
 
-    return create_operation(
+    create_operation(
         "affine.min",
         location;
         operands,
@@ -676,7 +676,7 @@ function parallel(
         namedattribute("steps", steps),
     ]
 
-    return create_operation(
+    create_operation(
         "affine.parallel",
         location;
         operands,
@@ -726,7 +726,7 @@ function prefetch(
         namedattribute("map", map),
     ]
 
-    return create_operation(
+    create_operation(
         "affine.prefetch",
         location;
         operands,
@@ -775,7 +775,7 @@ function store(
     successors = Block[]
     attributes = NamedAttribute[namedattribute("map", map),]
 
-    return create_operation(
+    create_operation(
         "affine.store",
         location;
         operands,
@@ -835,7 +835,7 @@ function vector_load(
     successors = Block[]
     attributes = NamedAttribute[namedattribute("map", map),]
 
-    return create_operation(
+    create_operation(
         "affine.vector_load",
         location;
         operands,
@@ -897,7 +897,7 @@ function vector_store(
     successors = Block[]
     attributes = NamedAttribute[namedattribute("map", map),]
 
-    return create_operation(
+    create_operation(
         "affine.vector_store",
         location;
         operands,
@@ -929,7 +929,7 @@ function yield(operands::Vector{Value}; location=Location())
     successors = Block[]
     attributes = NamedAttribute[]
 
-    return create_operation(
+    create_operation(
         "affine.yield",
         location;
         operands,
